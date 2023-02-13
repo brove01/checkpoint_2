@@ -1,0 +1,20 @@
+Algorithme Dot_product:
+
+ Var 
+  ps:Float;
+  v1,v2:ARRAY_OF Float[2];
+
+ Begin
+  FUNCTION dot_product(v1,v2:ARRAY_OF Float):Float
+   Begin
+    ps:=V1[0]*V2[0]+V1[1]*V2[1];
+   End
+  Write("give me two vectors");
+  Read(v1,v2);
+  ps:=dot_product(v1,v2);
+  If(ps=0) THEN
+    Write("v1 and v2 are orthogonals");
+  Else 
+    Write("v1 and v2 arn't orthogonals");
+  End If
+ END

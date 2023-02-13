@@ -1,0 +1,33 @@
+FUNCTION occ(x:Integer,arr:ARRAY_OF Integer):Integer //function to calculate number of ocurences elements
+ var
+  no:Integer;
+ Begin
+   no:=0;
+   For i From 0 To n-1 Step -1 Do
+    if(arr[i]=x)THEN
+     nb=nb+1;
+    End If
+   End For
+   return no
+ END.
+
+PRCEDURE insurt_Sort(arr:ARRAY_OF Integer)
+ Var n,nb,i,max-idx:Integer;
+     tab:ARRAY_OF Integer;
+ Begin
+  n:=arr.length;
+  nb:=0;
+  For i From 0 To n-1 Step -1 Do //check the element i of arr compared with all others elements j of arr.
+   For j From 0 To n-1 Step -1 Do
+    if(arr[i]<arr[j])And(i<>j) THEN //compared the element i with all the others elements without itself.
+     nb=nb+1; // nb number of elements grader than element i.
+    End If
+   End For
+   no:=occ(arr[i],arr); //for some elements we have occurences than no is the number of occurences value.
+   
+   For k From 1 To no Step 1 Do // for this step we can make the occurences elements in tab successively from n-nb-1 to n-nb-no.  
+    tab[n-nb-no]:=arr[i];
+   End For
+  End For
+  return tab;
+ END.
